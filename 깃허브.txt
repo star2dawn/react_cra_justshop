@@ -90,3 +90,76 @@ git add .
  git add .
  git commit  -m  '리액트 create-react-app 저스트 쇼핑몰 확장자 js => jsx 수정'
  git push origin master
+
+
+ /////////////////////////////////////////////////////////////////
+ 배포하기 (페이징)
+ 1. 상단메뉴 Settings 클릭
+ 2. 좌측 메뉴 Pages 메뉴 클릭
+ 3. GitHub Pages
+ 4. Branch
+    GitHub Pages is currently disabled. Select a source below to enable GitHub Pages for this repository.
+
+    None / Save 부분에서
+    none 클릭 셀렉트 박스 열리면
+    master로 선택
+    우측 save  클릭
+
+ 5. 새로고침
+ ctrl+shift+r 
+
+ Your site is live at https://star2dawn.github.io/just_shop/
+ https://star2dawn.github.io/just_shop/
+ 꼭 30초 ~ 1분 대기 하고 접속하기
+
+배포주소
+https://star2dawn.github.io/just_shop/
+
+6. Deployment => GitHub Pages 위치로 내려온다
+
+package.json = > 깃허브 배포주소 속성과 주소 추가하기
+/////////////////////////////////////////////////
+
+step1 : Add homepage to package.json
+포트폴리오 프로젝트
+package.json 에디터에서 연다
+
+맨 아래쪽에 추가하기
+"homepage": "https://star2dawn.github.io/just_shop/" //배포주소//
+
+step2 : Install gh-pages and add deploy to scripts in package.json
+//////////////////////////////////////////////////////
+gh-pages => npm i gh-pages
+            =
+            npm install --save gh-pages
+/////////////////////////////////////////////////////
+package.json 에서 scripts 에 
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build",
+    넣기
+
+
+Step 3: Deploy the site by running npm run deploy
+////////////////////////////////
+npm run deploy
+///////////////////////////////
+
+
+7. 빌드하기
+npm run build
+
+
+/////////////////////////////
+원본 소스만 올리기
+
+기존주소삭제
+git remote remove origin
+삭제주호확인
+git remote -v
+
+깃허브 원격지 저장소 주소 추가 지정
+git remote add origin https://star2dawn.github.io/just_shop/
+
+git add .
+git commit -m '저스트 쇼핑몰 cra 원본 소스'
+git push origin master

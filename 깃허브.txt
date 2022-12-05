@@ -158,8 +158,11 @@ git remote remove origin
 git remote -v
 
 깃허브 원격지 저장소 주소 추가 지정
-git remote add origin https://star2dawn.github.io/just_shop/
+git remote add origin https://github.com/star2dawn/react_cra_justshop.git
 
 git add .
 git commit -m '저스트 쇼핑몰 cra 원본 소스'
 git push origin master
+
+새로고침 소스 원본 확인 끝
+버전관리 프로젝트 개발
